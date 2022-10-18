@@ -7,13 +7,18 @@
 int spec_s(va_list vls)
 {
 	char *s;
+	int i;
 
+	i = 0;
 	s = va_arg(vls, char *);
 	while (*s != '\0')
+	{
 		_putchar(*s++);
+		i++;
+	}
 	if (s == NULL)
 		s = "(null)";
-	return (0);
+	return (i);
 }
 /**
  * spec_c - specificer for character
