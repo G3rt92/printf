@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * spec_prcnt - prints a percent
- * @l: va_list arguments from _printf
- * Return: number of char printed
+ * @vls: unused attribute
+ * Return: percent
  */
 int spec_prcnt(__attribute__((unused))va_list vls)
 {

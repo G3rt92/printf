@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * _printf -
- *
- *
+ * _printf - custom implementation of printf function
+ * @format: the formart string
+ * Return: int
  **/
 int _printf(const char *format, ...)
 {
