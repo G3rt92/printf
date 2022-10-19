@@ -6,7 +6,7 @@
  **/
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int i, j, k;
 
 	va_list vls;
 	sptype_t fspec[] = {
@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(vls, format);
+	k = 0;
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -26,7 +27,7 @@ int _printf(const char *format, ...)
 				if (format[i] == fspec[j].ch)
 				{
 					i++;
-					fspec[j].func(vls);
+					k = fspec[j].func(vls);
 					continue;
 				}
 			}
@@ -35,5 +36,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(vls);
 
-	return (0);
+	return ((i + k) - 2);
 }
