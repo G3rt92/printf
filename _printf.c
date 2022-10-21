@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 
 	va_start(vls, format);
 	k = 0;
-	for (i = 0; format[i] != '\0'; i++)
+		for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 					continue;
 				}
 			}
-			k = k + 2;
+			k = k - 2;
 		}
 		if (format[i] == '\0')
 		{
@@ -43,5 +43,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(vls);
 
-	return (k + i);
+	return ((k + i));
 }
