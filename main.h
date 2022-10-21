@@ -19,6 +19,5 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int spec_s(va_list vls);
 int spec_c(va_list vls);
-int spec_prcnt(__attribute__((unused))va_list valist);
 
 #endif
