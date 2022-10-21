@@ -24,6 +24,11 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			f (format[i] == '%')
+			{
+				_putchar('%');
+				break;
+			}
 			for (j = 0; fspec[j].ch; j++)
 			{
 				if (format[i] == fspec[j].ch)
