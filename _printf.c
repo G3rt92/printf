@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 
 	va_start(vls, format);
 	k = 0;
-		for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -29,15 +29,15 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				break;
 			}
-			for (j = 0; fspec[j].ch; j++)
-			{
-				if (format[i] == fspec[j].ch)
+				for (j = 0; fspec[j].ch; j++)
 				{
-					i++;
-					k = fspec[j].func(vls);
-					continue;
+					if (format[i] == fspec[j].ch)
+					{
+						i++;
+						k = fspec[j].func(vls);
+						continue;
+					}
 				}
-			}
 			k = k - 2;
 		}
 		if (format[i] == '\0')
@@ -50,3 +50,4 @@ int _printf(const char *format, ...)
 
 	return ((k + i));
 }
+
