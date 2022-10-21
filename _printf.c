@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * _printf - custom implementation of printf function
  * @format: the formart string
@@ -35,12 +37,11 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] == '\0')
 		{
-			_putchar('\n');
 			break;
 		}
 		_putchar(format[i]);
 	}
 	va_end(vls);
 
-	return (i + k);
+	return (k + i);
 }
