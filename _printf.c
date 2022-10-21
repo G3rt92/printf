@@ -33,6 +33,11 @@ int _printf(const char *format, ...)
 			}
 			k = k + 2;
 		}
+		if (format[i] == '\0')
+		{
+			_putchar('\n');
+			break;
+		}
 		_putchar(format[i]);
 	}
 	va_end(vls);
