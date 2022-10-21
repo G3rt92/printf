@@ -31,10 +31,11 @@ int _printf(const char *format, ...)
 					continue;
 				}
 			}
+			k = k + 2;
 		}
 		_putchar(format[i]);
 	}
 	va_end(vls);
 
-	return ((i + k) - 2);
+	return (i + k);
 }
