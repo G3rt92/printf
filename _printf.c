@@ -9,10 +9,9 @@
 int _printf(const char *format, ...)
 {
 	int i, j, k;
-
 	va_list vls;
 	sptype_t fspec[] = {
-		{'c', spec_c}, {'s', spec_s}, {'%', spec_prcnt}, {'\0', NULL}};
+		{'c', spec_c}, {'s', spec_s}, {'\0', NULL}};
 
 	if (!format)
 		return (-1);
@@ -41,13 +40,10 @@ int _printf(const char *format, ...)
 			k = k - 2;
 		}
 		if (format[i] == '\0')
-		{
 			break;
-		}
 		_putchar(format[i]);
 	}
 	va_end(vls);
-
 	return ((k + i));
 }
 
